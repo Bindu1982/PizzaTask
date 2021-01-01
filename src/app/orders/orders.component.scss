@@ -1,0 +1,45 @@
+@import "../../assets/styles/mixins";
+
+.parent_div {
+  width: 50%;
+  height: 100px;
+  float: left;
+  padding: 20px;
+  margin: 15px;
+  background-color: lightgrey;
+  box-shadow: 1px 0px 2px #ddd;
+
+  .div_one {
+    width: 100px;
+    @include ht_fl;
+    padding-right: 30px;
+  }
+}
+.outer_div {
+  width: 250px;
+  height: 100%;
+  float: left;
+  padding-right: 30px;
+}
+
+.common_div {
+  width: 100%;
+  @include ht_fl;
+}
+
+.items_div {
+  width: 50%;
+  @include ht_fl;
+}
+.total_div {
+  width: 50%;
+  @include ht_fl;
+  text-align: right;
+}
+
+.status_div {
+  width: 250px;
+  height: 100%;
+  float: left;
+  text-align: center;
+}

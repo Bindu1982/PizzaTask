@@ -1,0 +1,46 @@
+<h2>Pizza task</h2>
+<div *ngFor="let order of orders; let idx = index"> <!-- ngFor to list the list of orders....orders holds
+                                                         the mock-orders list from the OrdersComponentclass-->
+                                                    <!-- order holds the current order object -->     
+    <div class="parent_div">                        
+        <div class="div_one">
+            <a routerLink="/orderDetails/{{ order.id }}"><b>Order# </b>
+            <div>{{ order.id }}</div></a>
+        </div>
+        <div class="outer_div">
+            <div class="common_div">
+                <b>CustomerName</b>
+                <div>{{ order.custname }}</div>
+            </div>
+            <div class="common_div">
+                <div class="items_div">
+                    <b>Itemsordered</b>
+                    <div>{{ order.items }}</div>
+                    <!-- <div>{{ order.itemsname }}</div>
+                    <div>{{ order.deliveryaddress }}</div> -->
+                </div>
+                <div class="total_div">
+                    <b>TotalAmt:</b> {{ order.total_amt | currency: "INR" }}
+                </div>
+            </div>
+        </div>        <div class="status_div">
+            <div class="common_div">
+                <button id="row{{ idx }}" (click)="setStatus(idx, counter)" class="btn btn-primary">
+                    Change Status
+                </button>
+            </div>
+            <div class="common_div">
+                <div *ngFor="let status of order.status; let i = index">
+                    <div *ngIf="counter == i" [ngStyle]="{'color' : getColor(status.status_name)}"
+                        [style.fontSize.px]="18">
+
+                        {{ status.status_name}}                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
