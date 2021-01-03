@@ -12,6 +12,7 @@ export class TableComponent implements OnInit {
   currentId: string;
   id: any;
   routedOrder: any[];
+  itemname: string[];
 
   constructor(private router: ActivatedRoute) {}
 
@@ -20,7 +21,6 @@ export class TableComponent implements OnInit {
     this.currentId = this.router.snapshot.paramMap.get('id');
     // console.log('this.currentId::', this.currentId);
     // console.log(this.orders);
-    // console.log(parseInt(this.currentId));
 
     for (let index in this.orders) {
       //console.log(this.orders[index]);

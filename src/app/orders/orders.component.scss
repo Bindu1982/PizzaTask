@@ -1,11 +1,17 @@
 @import "../../assets/styles/mixins";
 
+.container {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: blue;
+}
 .parent_div {
   width: 50%;
   height: 100px;
-  float: left;
   padding: 20px;
-  margin: 15px;
+  margin: 20px auto;
   background-color: lightgrey;
   box-shadow: 1px 0px 2px #ddd;
 
@@ -25,6 +31,9 @@
 .common_div {
   width: 100%;
   @include ht_fl;
+  .btn {
+    border-radius: 4rem;
+  }
 }
 
 .items_div {

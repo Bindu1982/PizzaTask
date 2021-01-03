@@ -1,0 +1,21 @@
+.heading {
+  margin: 20px;
+  color: blue;
+  text-align: center;
+}
+
+:host::ng-deep {
+  .table-bordered th {
+    background-color: #ccc;
+  }
+}
+.cellstyle {
+  padding: 0px;
+}
+.tblstyle {
+  width: 100%;
+}
+
+.cellAlign {
+  vertical-align: middle;
+}

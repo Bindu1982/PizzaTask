@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../order';
 import { ORDERS } from '../mock-orders';
 
 @Component({
@@ -16,21 +15,36 @@ export class OrdersComponent implements OnInit {
   ngOnInit(): void {
     this.counter = 0;
   }
-  getColor(statusname) {
-    switch (statusname) {
-      case 'Order Received':
+  getColor(status) {
+    switch (status) {
+      case 1:
         return 'green';
-      case 'Preparing':
+      case 2:
         return 'blue';
-      case 'Ready to serve':
-        return 'grey';
+      case 3:
+        return 'orangered';
     }
   }
 
-  setStatus(idx, currentCounter) {
-    //debugger;
-    if (this.counter == currentCounter) {
-      this.counter++;
+  incOrderStatus(id) {
+    if (this.orders[id].status <= 2) this.orders[id].status++;
+  }
+
+  getStatusNameFromVal(val) {
+    //  console.log('VAL=', val);
+    switch (val) {
+      case 1:
+        return 'Order Received';
+      case 2:
+        return 'Preparing';
+      case 3:
+        return 'Ready to Serve';
+      default:
+        return 'Error State';
     }
+  }
+
+  resetCounter() {
+    this.counter = 0;
   }
 }

@@ -1,24 +1,35 @@
-<table class="table">
-  <thead>
+<h2 class="heading">Order Details</h2>
+
+<div class="container">
+
+  <table class="table table-bordered table-light">
+
     <tr>
-      <th scope="col">Item Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Total price</th>
-      <th scope="col">CustomerName</th>
+      <th scope="col" class="text-center">Item Details</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Customer Name</th>
       <th scope="col">Delivery Address</th>
     </tr>
-  </thead>
-  <tr>
+    <tr>
+      <td class="cellstyle">
+        <table class="tblstyle">
+          <tr>
+            <th>Item Name</th>
+            <th>Price</th>
+          </tr>
+          <tr *ngFor="let items of routedOrder[0].itemname;let idx = index;">
+            <td> {{routedOrder[0].itemname[idx]}} </td>
+            <td> {{routedOrder[0].price[idx]}} </td>
+          </tr>
+        </table>
+      </td>
+      <td class="cellAlign">{{routedOrder[0].total_amt}}</td>
+      <td class="cellAlign">{{routedOrder[0].custname}}</td>
+      <td class="cellAlign">{{routedOrder[0].deliveryaddress}}</td>
+    </tr>
+  </table>
 
-    <td>{{routedOrder[0].itemname}}</td>
-    <td>{{routedOrder[0].price}}</td>
-    <td>{{routedOrder[0].total_amt}}</td>
-    <td>{{routedOrder[0].custname}}</td>
-    <td>{{routedOrder[0].deliveryaddress}}</td>
-  </tr>
-  <tr>
-
-  </tr>
 
 
-</table>
+
+</div>
